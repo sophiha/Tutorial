@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="h-full" data-theme="true" data-theme-mode="system" dir="ltr" lang="pt">
+
+<head>
+   <title>
+      EasyForum
+   </title>
+   <meta charset="utf-8" />
+   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+   <link href="assets/media/app/favicon.ico" rel="shortcut icon" />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+   <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+
+<body class="antialiased flex h-full text-base text-gray-700 dark:bg-coal-500">
+   <script>
+      const defaultThemeMode = 'light';
+
+      let themeMode;
+
+      if (document.documentElement) {
+         if (localStorage.getItem('theme')) {
+            themeMode = localStorage.getItem('theme');
+         } else if (document.documentElement.hasAttribute('data-theme-mode')) {
+            themeMode = document.documentElement.getAttribute('data-theme-mode');
+         } else {
+            themeMode = defaultThemeMode;
+         }
+
+         if (themeMode === 'system') {
+            themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+         }
+
+         document.documentElement.classList.add(themeMode);
+      }
+   </script>
+
+   <div class="flex grow pt-[80px] lg:pt-[110px]" id="page">
+      <div class="grow px-5 lg:px-8 xl:max-w-[90rem] xl:mx-auto flex" id="page_container">
+         <div class="flex grow flex-col gap-3 lg:gap-6 lg:ml-[240px] lg:mr-[280px] lg:px-6" id="wrapper">
+            <div class="flex flex-col gap-2.5 mb-5">
+               <div class="flex items-center gap-1.5 text-md font-semibold">
+                  <span class="text-primary">
+                     Começando
+                  </span>
+               </div>
+               <div class="flex flex-col gap-2.5">
+                  <h1 class="text-2xl font-bold text-gray-900">
+                     Instalação do WeaveMC
+                  </h1>
+                  <p class="text-sm font-normal text-gray-900">
+                     O WeaveMC é um mod loader universal projetado para injetar mods em clientes de Minecraft, como o <strong>Lunar Client</strong>, <strong>Forge</strong>, <strong>Fabric</strong>, ou até mesmo o cliente Vanilla. Ele oferece duas abordagens para a instalação: o <strong>Weave Manager</strong>, uma solução gráfica e automática, e o <strong>Weave Loader</strong>, que requer configuração manual via argumentos JVM, ideal para utilizadores mais avançados ou que necessitam de maior controlo.
+                  </p>
+               </div>
+            </div>
+            <main class="text-gray-800 text-sm font-normal grow" id="content-1" role="content">
+               <div class="mb-12 lg:mb-16">
+                  <div class="flex flex-col">
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">1</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Baixar e Abrir o Weave Manager (Recomendado)
+                           </h4>
+                           <div class="mb-4">
+                              O <strong>Weave Manager</strong> é a opção mais amigável e recomendada para a maioria dos utilizadores, pois automatiza o processo de injeção do WeaveMC no seu jogo. Baixe a versão mais recente para o seu sistema operativo (Windows, Linux ou macOS) e execute-o.<br>
+                              <a class="link" href="https://github.com/Weave-MC/Weave-Manager/releases" target="_blank">Baixe o Weave Manager (GitHub Oficial)</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">2</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Instalar o Mod EasyForum
+                           </h4>
+                           <div class="mb-4">
+                              No Weave Manager, localize e clique no ícone de <strong>pasta</strong> (geralmente representa a pasta de mods). Isso abrirá a pasta de mods padrão do WeaveMC, localizada em <code class="code">~/.weave/mods</code> (ou <code class="code">%userprofile%\.weave\mods</code> no Windows). Arraste o arquivo <code class="code">EasyForum-3.2.1.jar</code> para esta pasta.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">3</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Vincular ao Processo do Minecraft
+                           </h4>
+                           <div class="mb-4">
+                              1. Inicie o seu cliente de Minecraft (Lunar Client, Forge, Fabric, Vanilla, etc.).<br>
+                              2. No Weave Manager, na aba <strong>"Overview"</strong>, o processo do seu jogo Minecraft deverá aparecer listado em <strong>"Minecraft Processes"</strong>.<br>
+                              3. Clique no processo do Minecraft e siga as instruções para criar um perfil de configuração. Este perfil guardará as suas definições para futuras sessões.<br>
+                              4. <strong>Feche o jogo</strong> para que o Weave Manager possa aplicar as alterações de forma segura.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">4</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Iniciar o Jogo com o WeaveMC
+                           </h4>
+                           <p class="text-gray-900">
+                              No Weave Manager, navegue até a aba <strong>"Game"</strong>, selecione o perfil que acabou de criar e clique em <strong>"Launch"</strong>. O WeaveMC será injetado no seu cliente de Minecraft e o mod EasyForum estará ativo e pronto a ser utilizado!
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <h2 class="flex leading-none text-gray-900 font-semibold text-xl mb-4" id="content-2">
+                  <a class="flex items-center group relative border-none lg:-ml-2 lg:pl-2">
+                     Instalação Manual (Weave Loader)
+                  </a>
+               </h2>
+               <div class="mb-12 lg:mb-16">
+                  <div class="mb-4">
+                     Este método é destinado a utilizadores que preferem ou necessitam de configurar o WeaveMC manualmente, geralmente através de launchers que permitem a edição de argumentos JVM. Oferece um controlo maior, mas exige um conhecimento técnico um pouco mais aprofundado.
+                  </div>
+                  <div class="mb-6"></div>
+                  <div class="flex flex-col">
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">1</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Baixar o Weave Loader (JAR do Agente)
+                           </h4>
+                           <div class="mb-4">Baixe o arquivo do agente (geralmente nomeado como <code class="code">weave-loader.jar</code> ou <code class="code">agent.jar</code>) da página de releases oficial do Weave Loader. Este é o arquivo que será injetado no seu cliente de Minecraft.<br>
+                              <div class="flex items-center gap-2 mt-2">
+                                 <a class="link font-semibold" href="https://github.com/Weave-MC/Weave-Loader/releases" target="_blank">Baixe o Weave Loader (GitHub Oficial)</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">2</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Configuração de Argumentos JVM
+                           </h4>
+                           <div class="mb-4">
+                              No seu launcher de Minecraft (por exemplo, o launcher oficial, MultiMC, etc.), adicione o seguinte argumento JVM. Certifique-se de substituir <code class="code">"C:\Caminho\Para\Seu\weave-loader.jar"</code> pelo caminho absoluto e correto para o arquivo <code class="code">weave-loader.jar</code> que baixou.
+                           </div>
+                           <div class="grid">
+                              <div class="min-w-full">
+                                 <div class="card-rounded relative group bg-coal-100 !py-1 !px-3">
+                                    <button class="group group-hover:flex hidden absolute top-0 right-0 btn btn-icon btn-sm btn-icon-xl mt-3 mr-4 z-1" data-clipboard="true">
+                                       <i class="ki-outline ki-copy group-[.copied]:hidden hover:text-primary text-white"></i>
+                                       <i class="ki-outline ki-copy-success group-[.copied]:flex hidden hover:text-primary text-white"></i>
+                                    </button>
+                                    <pre class="!p-1 !bg-transparent scrollable-auto language-text" style="; --tw-scrollbar-thumb-color: var(--tw-gray-600)">
+                                       <code class="language-text !font-normal !text-[13px] !bg-transparent !p-0">
+                                          -javaagent:"C:\Caminho\Para\Seu\weave-loader.jar"
+                                       </code>
+                                    </pre>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="mt-2 text-xs text-gray-600">
+                              <strong>Importante:</strong> Utilize aspas duplas <code class="code">""</code> se o caminho para o arquivo <code class="code">weave-loader.jar</code> contiver espaços. O Weave Loader é compatível com as versões do Minecraft 1.7 até 1.20.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">3</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Pasta de Mods Padrão do WeaveMC
+                           </h4>
+                           <div class="mb-4">
+                              O WeaveMC procura automaticamente os seus mods (como o EasyForum) nas seguintes localizações padrão. Se estas pastas não existirem, deverá criá-las manualmente:
+                           </div>
+                           <div class="grid">
+                              <div class="min-w-full">
+                                 <div class="card-rounded relative group bg-coal-100 !py-1 !px-3">
+                                    <button class="group group-hover:flex hidden absolute top-0 right-0 btn btn-icon btn-sm btn-icon-xl mt-3 mr-4 z-1" data-clipboard="true">
+                                       <i class="ki-outline ki-copy group-[.copied]:hidden hover:text-primary text-white"></i>
+                                       <i class="ki-outline ki-copy-success group-[.copied]:flex hidden hover:text-primary text-white"></i>
+                                    </button>
+                                    <pre class="!p-1 !bg-transparent scrollable-auto language-text" style="; --tw-scrollbar-thumb-color: var(--tw-gray-600)">
+                                       <code class="language-text !font-normal !text-[13px] !bg-transparent !p-0">
+                                          Windows: %userprofile%\.weave\mods
+                                          Linux/macOS: ~/.weave/mods
+                                       </code>
+                                    </pre>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="mt-2 text-xs text-gray-600">
+                              <i class="ki-outline ki-information-2 text-primary align-middle mr-1"></i>
+                              <strong>Nota:</strong> A pasta <code class="code">.weave</code> é criada na sua diretoria de utilizador (home directory).
+                           </div>
+                        </div>
+                     </div>
+                     <div class="relative flex items-start">
+                        <div class="w-9 left-0 top-9 my-2 absolute bottom-0 translate-x-1/2 border-l border-l-l-gray-300"></div>
+                        <div class="w-9 h-9 flex items-center justify-center shrink-0 rounded-full border border-gray-300 text-primary text-2sm font-bold">4</div>
+                        <div class="pt-1.5 pl-5 mb-5 text-md grow">
+                           <h4 class="text-base text-gray-900 font-semibold mb-3.5">
+                              Finalizar a Instalação e Iniciar o Jogo
+                           </h4>
+                           <p class="text-gray-900">
+                              Após colocar o arquivo <code class="code">EasyForum-3.2.1.jar</code> na pasta de mods apropriada (<code class="code">.weave/mods</code>), inicie o seu cliente de Minecraft através do launcher que configurou com o argumento JVM. O WeaveMC carregará o mod automaticamente.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </main>
+            <footer class="footer" id="footer">
+               <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-3 py-5">
+                  <div class="flex order-2 md:order-1 gap-2 font-normal text-2sm">
+                     <span class="text-gray-500">
+                        © 2026
+                     </span>
+                     <a class="text-gray-600 hover:text-primary" href="https://easyforum.ovh/">
+                        EasyForum
+                     </a>
+                  </div>
+                  <nav class="flex order-1 md:order-2 gap-4 font-normal text-2sm text-gray-600">
+                     <a class="hover:text-primary" href="https://discord.com/invite/PbySD4db5s">
+                        Suporte
+                     </a>
+                  </nav>
+               </div>
+            </footer>
+         </div>
+      </div>
+
+      <script src="assets/vendor/prismjs/prismjs.min.js"></script>
+</body>
+
+</html>
